@@ -50,3 +50,31 @@ Create a credentials file for the DigitalOcean DNS API:
 nano ~/certbot-creds.ini
 ```
 
+Add the following line to the file:
+
+```sh
+dns_digitalocean_token = -------------------YOUR_DIGITALOCEAN_API_TOKEN----------------------------------
+```
+
+Replace the token with your actual DigitalOcean API token.
+
+**Step 6: Secure the Credentials File**
+
+Change the permissions of the credentials file to be readable only by the owner:
+
+```sh
+chmod 600 ~/certbot-creds.ini
+```
+
+**Step 7: Obtain a Wildcard SSL Certificate**
+
+Run the following command to obtain a wildcard SSL certificate:
+
+```sh
+sudo certbot certonly --dns-digitalocean --dns-digitalocean-credentials ~/certbot-creds.ini -d '*.example.com'
+```
+
+Replace example.com with your domain name.
+
+
+
