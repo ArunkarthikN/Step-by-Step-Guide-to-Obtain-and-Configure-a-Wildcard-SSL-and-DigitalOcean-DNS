@@ -77,4 +77,27 @@ sudo certbot certonly --dns-digitalocean --dns-digitalocean-credentials ~/certbo
 Replace example.com with your domain name.
 
 
+# How to Use the Script
+
+**1. Save the Script:**
+   
+   Save the script to a file, for example, setup_certbot.sh.
+
+**2. Make the Script Executable:**
+
+Make the script executable by running:
+
+```sh
+chmod +x setup_certbot.sh
+```
+
+**3. Run the Script:**
+
+Execute the script by running:
+
+```sh
+./setup_certbot.sh
+```
+
+The script will prompt you to enter your DigitalOcean API token, email address, and domain name. It will then proceed to install the necessary packages, configure Certbot for Apache, create the DigitalOcean credentials file, and obtain a wildcard SSL certificate for your domain.
 
